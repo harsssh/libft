@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 15:07:51 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/18 15:10:27 by kemizuki         ###   ########.fr       */
+/*   Created: 2023/05/18 20:52:47 by kemizuki          #+#    #+#             */
+/*   Updated: 2023/05/18 21:12:43 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+#include <stddef.h>
+#include <stdlib.h>
+
+void	*ft_calloc(size_t count, size_t size)
 {
-	if ('a' <= c && c <= 'z')
-		return ('A' + (c - 'a'));
-	return (c);
+	void	*buf;
+	size_t	bytes;
+
+	bytes = count * size;
+	if (size != 0 && bytes / size != count)
+		return (NULL);
+	buf = malloc(bytes);
+	if (!buf)
+		return (NULL);
+	return (ft_memset(buf, 0, bytes));
 }

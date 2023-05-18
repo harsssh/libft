@@ -9,7 +9,7 @@ $(LIB_NAME): $(OBJ)
 	ar rcs $@ $^
 
 .c.o:
-	$(CC) $(CFLAGS) -c $<
+	$(CC) -c $<
 
 .PHONY: clean
 clean:
