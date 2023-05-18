@@ -6,7 +6,7 @@
 /*   By: kemizuki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 18:37:38 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/16 19:39:02 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:03:42 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*str;
+	unsigned char	*str;
 
 	str = s;
 	while (n--)

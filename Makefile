@@ -1,6 +1,5 @@
-SRC=$(wildcard *.c)
+SRC=$(wildcard ft_*.c)
 OBJ=$(SRC:.c=.o)
-INCLUDE_PATH=./
 CFLAGS=-Wall -Wextra -Werror
 LIB_NAME=libft.a
 
@@ -10,7 +9,7 @@ $(LIB_NAME): $(OBJ)
 	ar rcs $@ $^
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE_PATH)
+	$(CC) $(CFLAGS) -c $<
 
 .PHONY: clean
 clean:

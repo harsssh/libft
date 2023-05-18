@@ -1,1 +1,5 @@
 a.out
+main.c
+libft.a
+*.o
+test
