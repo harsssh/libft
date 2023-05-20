@@ -6,7 +6,7 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 10:13:26 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 12:17:51 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 12:47:44 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char	**ft_split(char const *s, char c)
 	char	**buf;
 	char	*end;
 
+	if (s == NULL)
+		return (NULL);
 	wc = count_words(s, c);
 	buf = ft_calloc(wc + 1, sizeof(char *));
 	if (buf == NULL)

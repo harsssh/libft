@@ -6,7 +6,7 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 11:59:27 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 12:03:34 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 12:48:23 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*buf;
 	unsigned int	i;
 
+	if (s == NULL)
+		return (NULL);
 	buf = ft_strdup(s);
 	if (buf == NULL)
 		return (NULL);
