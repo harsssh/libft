@@ -6,13 +6,11 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 11:07:46 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 11:52:59 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:10:57 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 static unsigned int	ft_abs(int n)

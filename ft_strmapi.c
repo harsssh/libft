@@ -6,11 +6,11 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 11:59:27 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 12:48:23 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:09:47 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

@@ -6,14 +6,12 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 22:51:32 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 09:19:37 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:11:11 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 char	*ft_strdup(const char *src)
 {

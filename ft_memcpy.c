@@ -6,13 +6,11 @@
 /*   By: kemizuki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 18:43:17 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 12:34:02 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:10:36 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -27,4 +25,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		*d++ = *s++;
 	return (dst);
 }
-

@@ -6,11 +6,11 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 09:33:56 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 12:47:22 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:09:30 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 static size_t	joined_len(const char *s1, char const *s2)
 {

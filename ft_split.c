@@ -6,12 +6,11 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 10:13:26 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 12:47:44 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:11:03 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char	*skip_char(const char *s, char c)
 {

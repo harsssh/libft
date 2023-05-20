@@ -6,13 +6,11 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 09:05:24 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 12:17:28 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:10:21 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stddef.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

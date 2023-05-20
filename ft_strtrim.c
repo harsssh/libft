@@ -6,12 +6,11 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 09:43:59 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 12:47:10 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:10:06 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
+#include "libft.h"
 
 // whether s contains c
 static int	contains(const char *s, char c)

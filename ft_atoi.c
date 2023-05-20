@@ -6,14 +6,12 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:23:09 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/18 20:46:11 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:09:12 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 #include <limits.h>
-#include <stddef.h>
-#include <stdio.h>
 
 static int	ft_isspace(int c)
 {
