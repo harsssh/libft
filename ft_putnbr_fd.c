@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 22:51:32 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 09:19:37 by kemizuki         ###   ########.fr       */
+/*   Created: 2023/05/20 12:14:45 by kemizuki          #+#    #+#             */
+/*   Updated: 2023/05/20 12:15:21 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-char	*ft_strdup(const char *src)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	n;
-	char	*buf;
-
-	n = ft_strlen(src);
-	buf = (char *)malloc(n + 1);
-	if (buf == NULL)
-		return (NULL);
-	ft_strlcpy(buf, src, n + 1);
-	return (buf);
+	ft_putstr_fd(ft_itoa(n), fd);
 }

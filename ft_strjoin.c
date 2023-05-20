@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 22:51:32 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 09:19:37 by kemizuki         ###   ########.fr       */
+/*   Created: 2023/05/20 09:33:56 by kemizuki          #+#    #+#             */
+/*   Updated: 2023/05/20 12:17:22 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <libft.h>
 
-char	*ft_strdup(const char *src)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	n;
 	char	*buf;
+	size_t	buf_len;
 
-	n = ft_strlen(src);
-	buf = (char *)malloc(n + 1);
+	buf_len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	buf = ft_calloc(buf_len, sizeof(char));
 	if (buf == NULL)
 		return (NULL);
-	ft_strlcpy(buf, src, n + 1);
+	ft_strlcat(buf, s1, buf_len);
+	ft_strlcat(buf, s2, buf_len);
 	return (buf);
 }
