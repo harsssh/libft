@@ -6,11 +6,12 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 10:13:26 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 14:11:03 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 15:06:05 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static char	*skip_char(const char *s, char c)
 {
@@ -43,6 +44,25 @@ static size_t	count_words(const char *s, char c)
 	return (n);
 }
 
+static char	**store_word(char **buf, size_t index, const char *begin,
+		const char *end)
+{
+	size_t	i;
+
+	if (begin == end)
+		return (NULL);
+	buf[index] = ft_substr(begin, 0, end - begin);
+	if (buf[index] == NULL)
+	{
+		i = 0;
+		while (buf[i])
+			free(buf[i++]);
+		free(buf);
+		return (NULL);
+	}
+	return (buf);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	wc;
@@ -61,8 +81,8 @@ char	**ft_split(char const *s, char c)
 	{
 		s = skip_char(s, c);
 		end = find(s, c);
-		if (s != end)
-			buf[i++] = ft_substr(s, 0, end - s);
+		if (store_word(buf, i++, s, end) == NULL)
+			return (NULL);
 		s = end;
 	}
 	buf[i] = NULL;
