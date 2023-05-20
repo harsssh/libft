@@ -6,7 +6,7 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 09:05:24 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/20 14:10:21 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:26:49 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*buf;
+	size_t	slen;
 
 	if (s == NULL)
 		return (NULL);
-	if (ft_strlen(s) <= start)
+	slen = ft_strlen(s);
+	if (slen <= start)
 		return (ft_strdup(""));
+	if (slen - start < len)
+		len = slen - start;
 	buf = ft_calloc(len + 1, sizeof(char));
 	if (buf == NULL)
 		return (NULL);
