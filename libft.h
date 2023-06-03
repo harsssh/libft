@@ -6,7 +6,7 @@
 /*   By: kemizuki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:43:02 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/06/03 17:10:53 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/06/03 17:16:28 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 int		ft_printf(const char *format, ...);
+
+char	*get_next_line(int fd);
 
 #endif
