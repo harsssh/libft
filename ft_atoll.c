@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:47:22 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/05/23 13:49:20 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/06/12 00:42:51 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	is_overflow(int sign, unsigned long num, unsigned long x)
 	return (limit / 10 < num || limit - num * 10 < x);
 }
 
-long	ft_atol(const char *str)
+long long	ft_atoll(const char *str)
 {
 	int				sign;
 	unsigned long	num;
