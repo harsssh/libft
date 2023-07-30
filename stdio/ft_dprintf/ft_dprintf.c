@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 20:42:37 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/07/31 01:37:47 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/07/31 01:57:49 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,4 @@ int	ft_dprintf(int fd, const char *format, ...)
 	}
 	va_end(args);
 	return (len);
-}
-
-int	ft_printf(const char *format, ...)
-{
-	return (ft_dprintf(STDOUT_FILENO, format));
 }
