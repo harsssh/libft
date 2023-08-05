@@ -6,7 +6,7 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:47:22 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/07/31 19:35:11 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/08/05 09:39:01 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ long	ft_atol(const char *str)
 		if (is_overflow(sign, num, x))
 		{
 			errno = ERANGE;
-			if (sign == 1)
-				return ((int)LONG_MAX);
-			return ((int)LONG_MIN);
+			if (sign > 0)
+				return (LONG_MAX);
+			return (LONG_MIN);
 		}
 		num = num * 10 + x;
 	}

@@ -6,7 +6,7 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:47:22 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/07/31 19:35:40 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/08/05 09:38:43 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ static int	is_overflow(int sign, unsigned long num, unsigned long x)
 
 long long	ft_atoll(const char *str)
 {
-	int				sign;
-	unsigned long	num;
-	unsigned long	x;
+	int					sign;
+	unsigned long long	num;
+	unsigned long long	x;
 
 	num = 0;
 	sign = read_up_to_sign(&str);
@@ -54,9 +54,9 @@ long long	ft_atoll(const char *str)
 		if (is_overflow(sign, num, x))
 		{
 			errno = ERANGE;
-			if (sign == 1)
-				return ((int)LLONG_MAX);
-			return ((int)LLONG_MIN);
+			if (sign > 0)
+				return (LLONG_MAX);
+			return (LLONG_MIN);
 		}
 		num = num * 10 + x;
 	}

@@ -6,7 +6,7 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 15:23:09 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/07/31 19:34:31 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/08/05 09:38:54 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_atoi(const char *str)
 		if (is_overflow(sign, num, x))
 		{
 			errno = ERANGE;
-			if (sign == 1)
+			if (sign > 0)
 				return ((int)LONG_MAX);
 			return ((int)LONG_MIN);
 		}
