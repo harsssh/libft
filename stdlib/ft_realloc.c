@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stdlib.h                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 01:01:10 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/06/13 01:01:11 by kemizuki         ###   ########.fr       */
+/*   Created: 2023/08/13 12:11:26 by kemizuki          #+#    #+#             */
+/*   Updated: 2023/08/13 12:11:27 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STDLIB_H
-# define FT_STDLIB_H
+#include "ft_stdlib.h"
+#include "ft_string.h"
+#include <stdlib.h>
 
-# include <stddef.h>
+void	*ft_realloc(void *ptr, size_t size)
+{
+	void	*new;
 
-int			ft_atoi(const char *str);
-long		ft_atol(const char *str);
-long long	ft_atoll(const char *str);
-void		*ft_calloc(size_t count, size_t size);
-void		*ft_realloc(void *ptr, size_t size);
-char		*ft_itoa(int n);
-
-#endif
+	if (ptr == NULL)
+		return (ft_calloc(1, size));
+	new = ft_calloc(1, size);
+	if (new == NULL)
+		return (NULL);
+	ft_memcpy(new, ptr, size);
+	free(ptr);
+	return (new);
+}
