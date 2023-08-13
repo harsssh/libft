@@ -6,7 +6,7 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 21:46:43 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/08/14 01:02:36 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/08/13 21:46:44 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	ensure_sufficient_environ_allocated(char ***envpp)
 
 	if (*envpp == NULL || **envpp == NULL)
 	{
-		env_len = *envpp - environ + 1;
+		env_len = *envpp - environ;
 		new_environ = ft_realloc(last_environ, (env_len + 2) * sizeof(char *));
 		if (new_environ == NULL)
 			return (-1);
