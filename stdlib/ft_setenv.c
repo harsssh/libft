@@ -6,13 +6,14 @@
 /*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 21:46:43 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/08/13 21:46:44 by kemizuki         ###   ########.fr       */
+/*   Updated: 2023/08/14 02:33:48 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stdlib.h"
 #include "ft_string.h"
 #include <errno.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 static char	**find_env(const char *name, size_t name_len)
@@ -32,6 +33,21 @@ static char	**find_env(const char *name, size_t name_len)
 	return (envp);
 }
 
+static void	*reallocate_environ(void *ptr, size_t new_size, size_t old_size)
+{
+	void	*new;
+
+	new = malloc(new_size);
+	if (ptr == NULL)
+		return (new);
+	if (new != NULL)
+	{
+		ft_memcpy(new, ptr, old_size);
+		free(ptr);
+	}
+	return (new);
+}
+
 static int	ensure_sufficient_environ_allocated(char ***envpp)
 {
 	static char	**last_environ;
@@ -42,7 +58,9 @@ static int	ensure_sufficient_environ_allocated(char ***envpp)
 	if (*envpp == NULL || **envpp == NULL)
 	{
 		env_len = *envpp - environ;
-		new_environ = ft_realloc(last_environ, (env_len + 2) * sizeof(char *));
+		printf("%zu\n", env_len);
+		new_environ = reallocate_environ(last_environ, (env_len + 2)
+				* sizeof(char *), (env_len + 1) * sizeof(char *));
 		if (new_environ == NULL)
 			return (-1);
 		if (environ != last_environ)
