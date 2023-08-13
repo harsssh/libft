@@ -28,15 +28,14 @@ static int	read_up_to_sign(const char **s)
 	return (1);
 }
 
-// whether sign * (num * 10 + x) overflows the range for longs
-static int	is_overflow(int sign, unsigned long num, unsigned long x)
+static int	is_overflow(int sign, unsigned long long num, unsigned long long x)
 {
-	unsigned long	limit;
+	unsigned long long	limit;
 
-	if (sign == 1)
+	if (sign > 0)
 		limit = LLONG_MAX;
 	else
-		limit = -LLONG_MIN;
+		limit = (unsigned long long)LLONG_MAX + 1;
 	return (limit / 10 < num || limit - num * 10 < x);
 }
 
@@ -60,5 +59,5 @@ long long	ft_atoll(const char *str)
 		}
 		num = num * 10 + x;
 	}
-	return (sign * num);
+	return ((long long)(num * sign));
 }
