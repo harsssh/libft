@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   list_get.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kemizuki <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kemizuki <kemizuki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 16:43:02 by kemizuki          #+#    #+#             */
-/*   Updated: 2023/08/15 07:22:11 by kemizuki         ###   ########.fr       */
+/*   Created: 2023/08/15 07:22:39 by kemizuki          #+#    #+#             */
+/*   Updated: 2023/08/15 07:22:40 by kemizuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_list.h"
+#include "list_internal.h"
 
-# include "ft_ctype.h"
-# include "ft_list.h"
-# include "ft_stdio.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
-# include "ft_strings.h"
+void	*ft_list_get(t_list *list, unsigned int index)
+{
+	t_node	*node;
 
-#endif
+	node = ft_node_get(list, index);
+	if (node == NULL)
+		return (NULL);
+	return (node->data);
+}
