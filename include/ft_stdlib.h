@@ -20,6 +20,5 @@ long		ft_atol(const char *str);
 long long	ft_atoll(const char *str);
 void		*ft_calloc(size_t count, size_t size);
 char		*ft_itoa(int n);
-int			ft_setenv(const char *name, const char *value, int overwrite);
 
 #endif
